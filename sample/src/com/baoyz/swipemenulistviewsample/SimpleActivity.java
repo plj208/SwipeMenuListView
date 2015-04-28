@@ -11,6 +11,7 @@ import android.graphics.Color;
 import android.graphics.drawable.ColorDrawable;
 import android.net.Uri;
 import android.os.Bundle;
+import android.util.Log;
 import android.util.TypedValue;
 import android.view.View;
 import android.view.ViewGroup;
@@ -42,7 +43,7 @@ public class SimpleActivity extends Activity {
 		setContentView(R.layout.activity_list);
 
 		mAppList = getPackageManager().getInstalledApplications(0);
-
+//
 		mListView = (SwipeMenuListView) findViewById(R.id.listView);
 		mAdapter = new AppAdapter();
 		mListView.setAdapter(mAdapter);
@@ -139,14 +140,16 @@ public class SimpleActivity extends Activity {
 		
 	}
 
-	private void delete(ApplicationInfo item) {
+	public void delete(ApplicationInfo item) {
 		// delete app
 		try {
+            //
 			Intent intent = new Intent(Intent.ACTION_DELETE);
 			intent.setData(Uri.fromParts("package", item.packageName, null));
 			startActivity(intent);
 		} catch (Exception e) {
-		}
+            Log.v("","");
+        }
 	}
 
 	private void open(ApplicationInfo item) {
