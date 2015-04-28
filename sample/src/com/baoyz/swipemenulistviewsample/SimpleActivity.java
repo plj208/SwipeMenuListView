@@ -15,7 +15,7 @@ import android.util.TypedValue;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.AdapterView;
-import android.widget.AdapterView.OnItemClickListener;
+//import android.widget.AdapterView.OnItemClickListener;
 import android.widget.AdapterView.OnItemLongClickListener;
 import android.widget.BaseAdapter;
 import android.widget.ImageView;
@@ -25,7 +25,7 @@ import android.widget.Toast;
 import com.baoyz.swipemenulistview.SwipeMenu;
 import com.baoyz.swipemenulistview.SwipeMenuCreator;
 import com.baoyz.swipemenulistview.SwipeMenuItem;
-import com.baoyz.swipemenulistview.SwipeMenuLayout;
+//import com.baoyz.swipemenulistview.SwipeMenuLayout;
 import com.baoyz.swipemenulistview.SwipeMenuListView;
 import com.baoyz.swipemenulistview.SwipeMenuListView.OnMenuItemClickListener;
 import com.baoyz.swipemenulistview.SwipeMenuListView.OnSwipeListener;
@@ -85,6 +85,8 @@ public class SimpleActivity extends Activity {
 		};
 		// set creator
 		mListView.setMenuCreator(creator);
+        ////
+        ///
 
 		// step 2. listener item click event
 		mListView.setOnMenuItemClickListener(new OnMenuItemClickListener() {
@@ -130,7 +132,7 @@ public class SimpleActivity extends Activity {
 			@Override
 			public boolean onItemLongClick(AdapterView<?> parent, View view,
 					int position, long id) {
-				Toast.makeText(getApplicationContext(), position + " long click", 0).show();
+				Toast.makeText(getApplicationContext(), position + " long click", Toast.LENGTH_LONG).show();
 				return false;
 			}
 		});
